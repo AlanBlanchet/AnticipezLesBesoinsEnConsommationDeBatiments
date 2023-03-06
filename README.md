@@ -14,17 +14,25 @@ Récupérer le fichier de données [ici](https://s3.eu-west-1.amazonaws.com/cour
 Lancer la commande (nécessite [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html))
 
 ```bash
-conda install --file environment.yml
+conda env create --file environment.yml --force
+conda activate oc
+```
+
+Il faudra installer jupyter notebook
+
+```bash
+conda install -c anaconda jupyter
 ```
 
 # Execution
 
--
+```bash
+jupyter notebook
+```
 
-# Présentation du projet
+Il faut lancer le fichier `"analyse.ipynb"` en premier, puis `"prediction.ipynb"`.
 
--
-
-# Présentation
-
--
+- Le fichier d'`analyse` va générer un fichier `cleaned.csv` qui sera par la suite utilisé dans `prediction.ipynb`
+- Il y aura des temps d'attentes différents suivant le notebook
+    - ~2 mins pour `analyse.ipynb`
+    - ~5 mins pour `prediction.ipynb`
